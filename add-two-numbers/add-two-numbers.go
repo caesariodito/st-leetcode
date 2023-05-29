@@ -5,6 +5,8 @@
  *     Next *ListNode
  * }
  */
+
+//BINGGPT Answer
 func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
     dummyHead := &ListNode{Val: 0}
     currentNode := dummyHead
