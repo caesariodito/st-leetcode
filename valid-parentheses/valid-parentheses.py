@@ -5,12 +5,6 @@ class Solution:
         for char in s:
             if char in parantheses.keys():
                 stack.append(char)
-            else:
-                if len(stack) != 0 and parantheses[stack[-1]] == char:
-                    stack.pop()
-                else:
-                    return False
-        if len(stack) == 0:
-            return True
-        else:
-            return False
+            elif len(stack) == 0 or parantheses[stack.pop()] != char:
+                return False
+        return len(stack) == 0
