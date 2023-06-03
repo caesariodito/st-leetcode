@@ -3,7 +3,7 @@ class Solution:
         parantheses = {'(': ')', '{': '}', '[': ']'}
         stack = []
         for char in s:
-            if char in parantheses.keys():
+            if char in parantheses:
                 stack.append(char)
             elif len(stack) == 0 or parantheses[stack.pop()] != char:
                 return False
