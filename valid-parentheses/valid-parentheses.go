@@ -5,17 +5,11 @@ func isValid(s string) bool {
     for _, char := range s {
         if _, ok := parentheses[char]; ok {
             stack = append(stack, char)
+        } else if len(stack) == 0 || parentheses[stack[len(stack)-1]] != char {
+            return false
         } else {
-            if len(stack) != 0 && parentheses[stack[len(stack)-1]] == char {
-                stack = stack[:len(stack)-1]
-            } else {
-                return false
-            }
+            stack = stack[:len(stack)-1]
         }
     }
-    if len(stack) == 0 {
-        return true
-    } else {
-        return false
-    }
+    return len(stack) == 0
 }
