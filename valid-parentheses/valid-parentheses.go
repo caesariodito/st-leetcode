@@ -1,4 +1,4 @@
-// convertion from gpt
+// conversion from gpt
 func isValid(s string) bool {
     parentheses := map[rune]rune{'(': ')', '{': '}', '[': ']'}
     stack := make([]rune, 0)
